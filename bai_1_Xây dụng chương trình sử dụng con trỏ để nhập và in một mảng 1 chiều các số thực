@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int n;
+	printf("nhap so phan tu: ")
+	scanf("%d", &n);
+	float *p;
+	p = (float*)malloc(n*sizeof(float));
+	if(p == NULL){
+		printf("ko du bo nho");
+		return 0;
+	}
+	for(int i = 0; i<n; i++){
+		printf("nhap phan tu :");
+		scanf("%f", &p[i]);
+	}
+	for(int i = 0; i<n; i++){
+		printf(" %0.f", p[i]);
+	}
+	return 0;
+}

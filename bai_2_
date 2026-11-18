@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+void nhap(float *p, int m, int n){
+	int i,j;
+	for(i = 0; i < m; i++){
+		for(j = 0; j < n; j++){
+			printf("Nhap a[%d][%d]: ", i, j);
+			scanf("%f", (p + i * n + j));
+		}
+	}
+}
+void in(float *p, int m, int n){
+	int i, j;
+	for(i = 0; i < m; i++){
+		for(j = 0; j < n; j++){
+			printf("%.2f  ", *(p + i * n + j));
+		}
+		printf("\n");
+	}
+}
+int main(){
+	int m, n;
+	float *p;
+	p = (float*)malloc(m*n*sizeof(float));
+	printf("nhap so hang: ");
+	scanf("%d", &m);
+	printf("nhap so cot: ");
+	scanf("%d", &n);
+	if(p == NULL){
+		printf("ko du bo nho");
+		return 1;
+	}
+	nhap(p, m, n);
+	in(p, m, n);
+	free(p);
+	return 0;
+}
+
